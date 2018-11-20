@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+  <div class="d-flex row justify-content-between m-2">
+    <h1 class="display-4">Pet Shelter</h1>
+    <div class="align-self-center">
+      <h4>These pets are looking for a home!</h4>
+    </div>
+    <div class="align-self-center">
+      <button [routerLink]="['new']" class="btn btn-success">Add a pet to the shelter</button>
+    </div>
+  </div>
+  <table class="table table-light table-hover table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pet of pets">
+      <td>{{ pet.name }}</td>
+      <td>{{ pet.type }}</td>
+      <td>
+        <span class="btn-group">
+          <button [routerLink]="[pet._id]" class="btn btn-info">Details</button>
+          <button [routerLink]="[pet._id, 'edit']" class="btn btn-primary">Edit</button>
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

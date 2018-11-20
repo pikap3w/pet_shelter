@@ -1,0 +1,57 @@
+<div class="container-fluid m-2">
+
+  <h1 class="display-4">Pet Shelter</h1>
+  <h4 class="mb-3">Edit this pet</h4>
+
+  <form (ngSubmit)="editPet()" class="border p-3 col-8">
+    <div class="form-group">
+      <label class="col-8">Pet name:
+        <input type="text" class="form-control" name="name" [(ngModel)]="petToEdit.name">
+        <span *ngIf="err?.name" class="alert alert-danger">{{err?.name.message}}</span>
+      </label>
+
+    </div>
+
+    <div class="form-group">
+      <label class="col-8">Pet type:
+        <input type="text" class="form-control" name="type" [(ngModel)]="petToEdit.type">
+        <span *ngIf="err?.type" class="alert alert-danger">{{err?.type.message}}</span>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="col-8">Description:
+        <input type="text" class="form-control" name="desc" [(ngModel)]="petToEdit.desc">
+        <span *ngIf="err?.desc" class="alert alert-danger">{{err?.desc.message}}</span>
+      </label>
+    </div>
+
+    <div class="form-group m-3">Skills (optional):
+
+      <div class="form-inline m-3">
+        <label>Skill 1:
+          <input type="text" class="form-control ml-3" name="skill1" [(ngModel)]="petToEdit.skill1">
+        </label>
+      </div>
+
+      <div class="form-inline m-3">
+        <label>Skill 2:
+          <input type="text" class="form-control ml-3" name="skill2" [(ngModel)]="petToEdit.skill2">
+        </label>
+      </div>
+
+      <div class="form-inline m-3">
+        <label>Skill 3:
+          <input type="text" class="form-control ml-3" name="skill3" [(ngModel)]="petToEdit.skill3">
+        </label>
+      </div>
+
+    </div>
+
+
+    <input type="submit" class="btn btn-primary mr-3" value="Edit pet">
+    <button type="button" [routerLink]="['']" class="btn btn-primary">Cancel</button>
+  </form>
+</div>
+
+<!--<form [formGroup]="newProductForm" (ngSubmit)="createProduct()"-->

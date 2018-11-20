@@ -1,0 +1,27 @@
+<div class="container-fluid m-2">
+  <h1 class="display-4">Pet Shelter</h1>
+  <h4 class="mb-3">Details about {{petToShow?.name}}</h4>
+
+  <div class="row">
+    <p class="col-2">Pet type:</p>
+    <p class="col-6">{{petToShow?.type}}</p>
+  </div>
+  <div class="row">
+    <p class="col-2">Description:</p>
+    <p class="col-6">{{petToShow?.desc}}</p>
+  </div>
+  <div class="row">
+    <p class="col-2">Skills:</p>
+    <div class="col-6">
+      <p>{{petToShow?.skill1}}</p>
+      <p>{{petToShow?.skill2}}</p>
+      <p>{{petToShow?.skill3}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <p class="col-2">Likes:</p>
+    <p class="col-6">{{petToShow?.likes}}</p>
+  </div>
+  <button (click)="likePet()" [disabled]="disabled" class="btn btn-info mr-3">Like this pet</button>
+  <button (click)="deletePet()" class="btn btn-success">Adopt this pet!</button>
+</div>
